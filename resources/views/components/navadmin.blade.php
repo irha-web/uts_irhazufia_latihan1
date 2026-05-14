@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">POLGAN</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">
+                    Home
+                </a>
+                <a class="nav-link" href="/gallery">
+                    Gallery
+                </a>
+                <a class="nav-link" href="/about">
+                    About
+                </a>
+                <a class="nav-link" href="/dashboard">
+                    Dashboard
+                </a>
+                <a class="nav-link" href="/users">
+                    Users
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
