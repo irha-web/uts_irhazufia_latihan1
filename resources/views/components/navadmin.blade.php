@@ -18,9 +18,6 @@
                 <a class="nav-link" href="/dashboard">
                     Dashboard
                 </a>
-                <a class="nav-link" href="/users">
-                    Users
-                </a>
             </div>
         </div>
     </div>
