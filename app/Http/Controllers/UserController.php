@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(){
-        return view('admin.users', [
-            'users' => User::all()
-        ]);
+    public function index() {
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     public function create() {
-        return view('admin.create');
+        return view('users.create');
     }
     
     public function store(Request $request) {
@@ -28,7 +27,7 @@ class UserController extends Controller
 
     public function edit($id) {
         $user = User::findOrFail($id);
-        return view('admin.edit', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     public function update(Request $request, $id) {
