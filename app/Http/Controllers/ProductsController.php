@@ -19,18 +19,26 @@ class ProductsController extends Controller
     }
 
     public function store(Request $request)
-    {
-        Products::create([
-            'kode_barang' => $request->kode_barang,
-            'nama_barang' => $request->nama_barang,
-            'harga' => $request->harga,
-            'satuan' => $request->satuan,
-            'stock' => $request->stock
-        ]);
+{
+    $request->validate([
+        'kode_barang' => 'required',
+        'nama_barang' => 'required',
+        'harga' => 'required',
+        'satuan' => 'required',
+        'stock' => 'required|numeric'
+    ]);
 
-        return redirect()->route('products.index')
-                         ->with('success', 'Data berhasil ditambahkan');
-    }
+    Products::create([
+        'kode_barang' => $request->kode_barang,
+        'nama_barang' => $request->nama_barang,
+        'harga' => $request->harga,
+        'satuan' => $request->satuan,
+        'stock' => $request->stock
+    ]);
+
+    return redirect()->route('products.index')
+                     ->with('success', 'Data berhasil ditambahkan');
+}
 
     
     public function edit($id)
