@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Products extends Model
 {
     protected $table = 'products';
-    
+
     protected $fillable = [
-    'kode_barang',
-    'nama_barang',
-    'harga',
-    'satuan'
+        'kode_barang',
+        'nama_barang',
+        'harga',
+        'satuan',
+        'stock'
     ];
 }

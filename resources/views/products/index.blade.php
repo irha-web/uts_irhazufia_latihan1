@@ -3,28 +3,20 @@
     <div class="container mt-5">
 
         <div class="d-flex justify-content-between align-items-start mb-3">
-
             <div>
                 <h1>Products</h1>
             </div>
 
             <form action="{{ route('logout') }}" method="POST">
-
                 @csrf
-
                 <button type="submit" class="btn btn-danger">
                     Logout
                 </button>
-
             </form>
-
         </div>
 
-        <a href="{{ route('products.create') }}"
-           class="btn btn-primary mb-3">
-
+        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">
             Add Product
-
         </a>
 
         <table class="table table-bordered">
@@ -35,9 +27,11 @@
                     <th>Nama Barang</th>
                     <th>Harga</th>
                     <th>Satuan</th>
+                    <th>Stock</th> 
                     <th width="180">Action</th>
                 </tr>
             </thead>
+
             <tbody>
                 @foreach($products as $item)
                     <tr>
@@ -46,6 +40,7 @@
                         <td>{{ $item->nama_barang }}</td>
                         <td>{{ $item->harga }}</td>
                         <td>{{ $item->satuan }}</td>
+                        <td>{{ $item->stock }}</td> 
                         <td>
                             <a href="{{ route('products.edit', $item->id) }}"
                                class="btn btn-warning btn-sm">
@@ -57,7 +52,9 @@
                                   style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">
+                                <button type="submit"
+                                        class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Yakin mau hapus data ini?')">
                                     Delete
                                 </button>
                             </form>
@@ -65,6 +62,9 @@
                     </tr>
                 @endforeach
             </tbody>
+
         </table>
+
     </div>
+
 </x-app-layout>
